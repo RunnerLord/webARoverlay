@@ -57,7 +57,7 @@ const detectImage = () => {
   requestAnimationFrame(detectImage);
 };
 
-navigator.mediaDevices.getUserMedia({ video: true })
+navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
   .then((stream) => {
     video.srcObject = stream;
     video.play();
